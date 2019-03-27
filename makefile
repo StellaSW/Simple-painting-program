@@ -19,12 +19,12 @@ else
 	endif
 endif
 
-PROGRAM_NAME= LectureCode1
+PROGRAM_NAME= simplePaint
 
 run: $(PROGRAM_NAME)
 	./$(PROGRAM_NAME)$(EXEEXT)
 
-$(PROGRAM_NAME): simplePaint.o
+$(PROGRAM_NAME): simplePaint.o Point.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
 
 clean:
