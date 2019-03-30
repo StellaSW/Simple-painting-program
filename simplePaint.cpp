@@ -602,10 +602,10 @@ void createOurMenu()
 	int main_id = glutCreateMenu(MainMenu);
 	glutAddSubMenu("Colour", colourMenu);
 	glutAddSubMenu("Shapes", shapeMenu);
-	glutAddSubMenu("Radical Paint Brush", radicalBrushMenu);
+	glutAddSubMenu("Brush", radicalBrushMenu);
 	glutAddSubMenu("Eraser", eraserSizeMenu);
-	glutAddMenuEntry("Undo", 2);
-	glutAddMenuEntry("redo", 3);
+	glutAddMenuEntry("Back", 2);
+	glutAddMenuEntry("Retry", 3);
 	glutAddMenuEntry("Clear", 1);
 	glutAddMenuEntry("Quit", 0);
 	glutAttachMenu(GLUT_RIGHT_BUTTON);
@@ -642,41 +642,13 @@ void callbackInit()
 void Information()
 {
 	std::cout << "----------------------Welcome to Simple paint Program!----------------------\n"
-			  << "A list of commands:\n"
-			  << "Right click -> show menu\n"
-			  << "Left click -> choose option\n"
-			  << "Menu \"Colour\"\t"
-			  << "-> Change colour. Default is red.\n"
-			  << "Menu \"Shapes\"\t"
-			  << "-> The default shape is Point.\n"
-			  << "\tPoint\t\t"
-			  << "-> draw a Point at the point clicked with the mouse. Clicking and dragging will draw points constantly like free-form drawing.\n"
-			  << "\tLine\t\t"
-			  << "-> draw a linebetween two subseauently clicked points. (Bresenham's algorithm is used here.)\n"
-			  << "\tRectangle\t"
-			  << "-> draw a rectangle with top-left corner specified by the first click and the bottom-right corner specified by a second click. If the second click is bottom-left, top-right or top-left comparing to the first click, a warning will show in the console.\n"
-			  << "\tCircle\t\t"
-			  << "-> draw a circle centered at the position of the first click, with its radius set by a second click.\n"
-			  << "\tAirbrush\t"
-			  << "-> draw multiple points as brush around the clicked point. There are four options of size.\n"
-			  << "Menu \"Radical\""
-			  << "-> draw multiple points as brush around the centre point of the document. You can choose True or False. Only useful when shape is point. The default option is false. After choosing point in shape, it becomes False.\n"
-			  << "Menu \"Eraser\"\t"
-			  << "-> erase the points by clicking and dragging.\n"
-			  << "Menu \"Undo\"\t"
-			  << "-> undo, the Memory can keep maximum 20 records.\n"
-			  << "Menu \"redo\"\t"
-			  << "->  redo, the Memory can keep maximum 20 records.\n"
-			  << "Menu \"Clear\"\t"
-			  << "-> clear all the points and clear the Memory.\n"
-			  << "Menu \"Quit\"\t"
-			  << "-> close the window.\n"
-			  << "Keyboard 'q' or 'esc' -> close the window.\n"
-			  << "Keyboard 'c' -> clear all.\n"
-			  << "Keyboard '+' -> larger size.\n"
-			  << "Keyboard '-' -> smaller size.\n"
-			  << "Keyboard 'u' -> undo.\n"
-			  << "Keyboard 'r' -> redo." << std::endl;
+			  << "right click : menu. Can choose shape, colour and etc\n"
+			  << "q or esc : close the window.\n"
+			  << "c : clear all.\n"
+			  << "'+' : larger size.\n"
+			  << "'-' : smaller size.\n"
+			  << "u : undo.\n"
+			  << "r : retry." << std::endl;
 }
 
 int main(int argc, char **argv)
