@@ -17,3 +17,5 @@ u : undo
 r : retry
 
 This is some easy examples to show the results by running the program.
+
+[!ScreenShot](https://github.com/StellaSW/simple-painting-program/blob/master/p1.png)
